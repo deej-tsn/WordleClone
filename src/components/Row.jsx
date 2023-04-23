@@ -13,7 +13,7 @@ export default function Row(props){
         )
     }
     return (
-        <div className=" w-full h-fit flex place-content-evenly m-[1px]">
+        <div className={`w-full h-fit flex place-content-evenly m-[1px] ${props.rowAnimation}`}>
             {squareRow}
         </div>
     )

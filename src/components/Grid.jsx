@@ -18,6 +18,7 @@ export default function Grid(props){
             index = {index}
             rowMemory = {rowMemory[index]}
             rowColor = {rowColor[index]}
+            rowAnimation = {(index==props.activeRow && props.rowAnimation == true) ? "rowShake": ""}
         />
         )
     }

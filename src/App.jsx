@@ -19,7 +19,8 @@ function App(props) {
 	const [letterPressed, toggleLetterPressed] = useState(false);
 	const [newLetter, letterPicked] = useState("");
 	const [activeRow, interateActiveRow] = useState(1);
-	const [keyColor, upateKeywordColor] = useState(charArray);
+	const [keyColor, updateKeywordColor] = useState(charArray);
+	const [applyRowAnimation, toggleRowAnimation] = useState(false);
 
 
 	function evalRow(){
@@ -44,14 +45,16 @@ function App(props) {
 				}
 			}
 			updateGridColor([...gridColorPostEnter, ...colors])
-			upateKeywordColor(newKeyColor)
+			updateKeywordColor(newKeyColor)
 			return true;
 		}
+		toggleRowAnimation(true);
 		return false;
 
 	}
 
 	useEffect(() => {
+		toggleRowAnimation(false);
 		let newGridMemory = gridMemory;
 		let newGridColor = gridColor;
 		if(activeRow == 7){
@@ -100,6 +103,8 @@ function App(props) {
 		<Grid 
 			gridMemory = {gridMemory}
 			gridColor = {gridColor}
+			activeRow = {activeRow-1}
+			rowAnimation = {applyRowAnimation}
 		/>
 		<Keyboard
 			letterPressed = {letterPressed}
