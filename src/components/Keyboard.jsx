@@ -3,7 +3,7 @@ import KeyboardRow from "./KeyboardRow";
 export default function Keyboard(props){
     const row1 = ["q","w","e","r","t","y","u","i","o","p"];
     const row2 = ["a","s","d","f","g","h","j","k","l"];
-    const row3 = ["enter", "z","x","c","v","b","n","m", "back"];
+    const row3 = ["enter", "z","x","c","v","b","n","m", "←"];
     const rowsList = [row1, row2, row3];
     const rows = rowsList.map((row, index) => {
         return (
@@ -19,7 +19,7 @@ export default function Keyboard(props){
         )
     })
     return(
-        <div className="w-full h-fit md:w-1/4 flex flex-col items-center justify-center">
+        <div className="w-full h-fit md:w-1/4 flex flex-col items-center justify-center mt-5 bg-white rounded-lg p-2">
             {rows}
         </div>
     )

@@ -23,7 +23,7 @@ export default function Grid(props){
         )
     }
     return (
-        <div className=" w-full aspect-square md:w-1/4 flex flex-col place-content-evenly p-2 rounded-sm">
+        <div className=" w-full aspect-square md:w-1/4 flex flex-col place-content-evenly p-2  bg-gray-400 rounded-lg">
             {gridRow}
         </div>
     )

@@ -58,10 +58,10 @@ function App(props) {
 		let newGridMemory = gridMemory;
 		let newGridColor = gridColor;
 		if(activeRow == 7){
-			console.log(`unlikely the word was ${word}`);
+			console.log(`unlucky the word was ${word}`);
 		}
 		if(newLetter){
-			if (newLetter == "back") {
+			if (newLetter == "←") {
 				if (newGridMemory.length > (activeRow-1)*5) {
 					newGridMemory = newGridMemory.slice(0,-1);
 					newGridColor = newGridColor.slice(0,-1);
@@ -99,19 +99,22 @@ function App(props) {
 	);
 
 	return (
-		<div className=" w-full h-full flex flex-col justify-center items-center bg-black">
-		<Grid 
-			gridMemory = {gridMemory}
-			gridColor = {gridColor}
-			activeRow = {activeRow-1}
-			rowAnimation = {applyRowAnimation}
-		/>
-		<Keyboard
-			letterPressed = {letterPressed}
-			toggleLetterPressed = {toggleLetterPressed}
-			letterPicked = {letterPicked}
-			keyColor = {keyColor}
-		/>
+		<div className=" w-full h-full flex justify-center items-center bg-black">
+		<div className='w-full md:w-10/12 lg:w-4/5 h-fit flex flex-col justify-center items-center'>
+			<Grid 
+				gridMemory = {gridMemory}
+				gridColor = {gridColor}
+				activeRow = {activeRow-1}
+				rowAnimation = {applyRowAnimation}
+			/>
+			<Keyboard
+				letterPressed = {letterPressed}
+				toggleLetterPressed = {toggleLetterPressed}
+				letterPicked = {letterPicked}
+				keyColor = {keyColor}
+			/>
+		</div>
+		
 		</div>
 	)
 }
